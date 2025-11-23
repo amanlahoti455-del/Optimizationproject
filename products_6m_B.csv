@@ -1,0 +1,5 @@
+Product,ProdCost,SellPrice,CInv,CBack,RRes
+P1_TShirt,120,250,12,264,0.25
+P2_Jeans,350,700,35,770,0.75
+P3_Hoodie,500,1000,50,1100,1.2
+P4_Jacket,800,1600,80,1760,1.5
