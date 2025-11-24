@@ -24,10 +24,10 @@ products_df.columns = products_df.columns.str.strip().str.replace('\ufeff', '')
 demand_df.columns   = demand_df.columns.str.strip().str.replace('\ufeff', '')
 capacity_df.columns = capacity_df.columns.str.strip().str.replace('\ufeff', '')
 
-# preserve month labels exactly as in CSV (e.g., 'Jul', 'Aug' or 1,2,..)
+# preserve month labels exactly as in CSV (e.g., 'Jul', 'Aug')
 months = demand_df.iloc[:, 0].tolist()
 
-# 2) PARAMS / DICTS
+# PARAMS / DICTS
 products = products_df["Product"].astype(str).tolist()
 
 prod_cost = dict(zip(products_df.Product, products_df.ProdCost.astype(float)))
@@ -143,7 +143,7 @@ for p in products:
             P[p][m] <= M_dict[(p, m)] * Y[m]
         ), f"SetupLink_{p}_{m}"
 
-# 5 Explicit non-negativity 
+# 5. Explicit non-negativity 
 for p in products:
     for m in months:
         model += P[p][m] >= 0
