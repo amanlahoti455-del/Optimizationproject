@@ -13,7 +13,7 @@ Project Title
 
 Optimal Multi-Period Production Planning for Cost Minimization
 
-Short Description
+**Short Description**
 
 This project addresses a real-world production planning problem using Linear Programming (LP).
 A manufacturing company must determine optimal monthly production levels for multiple products while minimizing total cost over a six-month time period.
@@ -33,7 +33,7 @@ Setup decisions
 
 The model is implemented in Python using the PuLP optimizer and includes scenario analysis to study the impact of demand, capacity, and cost variations.
 
-Dataset Overview
+**Dataset Overview**
 
 The project uses three CSV files, stored in the Datasets/ directory:
 1. 01_products.csv
@@ -52,7 +52,7 @@ Contains monthly demand for each product (July to December).
 
 Contains the total available production hours for each month.
 
-Model Choice: Linear Programming (LP)
+**Model Choice: Linear Programming (LP)**
 Linear Programming was chosen because:
 Decision variables (production, inventory, backlog) are continuous.
 Setup variable is binary, enabling Mixed Integer Linear Programming.
@@ -60,7 +60,7 @@ Objective function is linear.
 Constraints (capacity, inventory balance, backlog limits) are linear.
 LP solvers such as CBC (used via PuLP) are efficient and reliable.
 
-Objective Function
+**Objective Function**
 Minimize
 ∑(𝐶𝑃𝑟𝑜𝑑⋅𝑃𝑝,𝑚)+∑(𝐶𝐼𝑛𝑣⋅𝐼𝑝,𝑚)+∑(𝐶𝐵𝑎𝑐𝑘⋅𝐵𝑝,𝑚)+∑(𝐶𝑆𝑒𝑡𝑢𝑝⋅𝑌𝑚)Minimize ∑(CProd⋅Pp,m)+∑(CInv⋅Ip,m)+∑(CBack⋅Bp,m)+∑(CSetup⋅Ym)
 Where:
@@ -70,7 +70,7 @@ Ip,m: Inventory at end of month
 Bp,m:Backlog
 𝑌𝑚 :Setup decision (1 if production happens in month 𝑚)
 
-Constraints
+**Constraints**
 1.Inventory balance
  	Im−1+Pm−Dm=Im​−Bm
  	​
@@ -85,11 +85,27 @@ Constraints
  	Pp,m​≤Mp,m​⋅Ym​
 
 
-Libraries Used
+**Libraries Used**
 pandas — Data loading and preprocessing
 pulp — Optimization solver (Linear Programming)
 matplotlib, seaborn — Data visualization
 math, os, copy — Utility functions
+
+
+**Setup Instructions**
+1.Install required libraries:
+pip install pandas pulp matplotlib seaborn
+
+2. Dataset structure
+Ensure the following folder structure exists:
+Datasets/
+ ├── 01_products.csv
+ ├── 02_demand.csv
+ └── 03_capacity.csv
+3.Run the Optimization Model
+  python production_planning_model.py
+4. Run the visualization 
+  python version2.py
 
 
 
