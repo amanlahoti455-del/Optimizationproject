@@ -7,7 +7,7 @@ BT2024231 - Advaya Bhardwaj
 
 BT2024014 - Sindhoor Ganapathi Hegde
 
-BT2024123 -10	 Aman Kumar Lahoti
+BT2024123 -	 Aman Kumar Lahoti
 
 Project Title
 
