@@ -1,4 +1,4 @@
-# 🏭 Optimal Multi-Period Production Planning for Cost Minimization
+# Optimal Multi-Period Production Planning for Cost Minimization
 
 > **Team:** Optimal Trio  
 > **Members:**  
@@ -8,7 +8,7 @@
 
 ---
 
-## 📌 Overview
+## Overview
 
 This project solves a real-world **multi-period production planning problem** using **Mixed Integer Linear Programming (MILP)**. A manufacturing company must determine the optimal monthly production levels for multiple products over a six-month horizon (July–December), minimizing total operational costs.
 
@@ -21,7 +21,7 @@ The model jointly optimizes:
 
 ---
 
-## 🎯 Objective Function
+## Objective Function
 
 Minimize total cost across all products `p` and months `m`:
 
@@ -40,7 +40,7 @@ $$\text{Minimize} \sum_{p,m}(C_{\text{Prod}} \cdot P_{p,m}) + \sum_{p,m}(C_{\tex
 
 ---
 
-## 📐 Constraints
+## Constraints
 
 **1. Inventory Balance** — ensures flow conservation each month:
 
@@ -60,7 +60,7 @@ $$P_{p,m} \leq M_{p,m} \cdot Y_m$$
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 project/
@@ -77,7 +77,7 @@ project/
 
 ---
 
-## 🗃️ Dataset Description
+## Dataset Description
 
 ### `01_products.csv`
 | Column | Description |
@@ -97,7 +97,7 @@ Total available production hours per month across the planning horizon.
 
 ---
 
-## ⚙️ Why Linear Programming?
+## Why Linear Programming?
 
 | Criterion | Justification |
 |-----------|---------------|
@@ -109,7 +109,7 @@ Total available production hours per month across the planning horizon.
 
 ---
 
-## 🛠️ Setup & Installation
+## Setup & Installation
 
 **1. Install dependencies:**
 
@@ -140,7 +140,7 @@ python version2.py
 
 ---
 
-## 📊 Model Outputs
+## Model Outputs
 
 After solving, the model reports:
 
@@ -153,7 +153,7 @@ After solving, the model reports:
 
 ---
 
-## 📦 Libraries Used
+## Libraries Used
 
 | Library | Purpose |
 |---------|---------|
@@ -165,7 +165,7 @@ After solving, the model reports:
 
 ---
 
-## 🔍 Scenario Analysis
+## Scenario Analysis
 
 The model includes scenario testing to evaluate sensitivity to:
 
@@ -177,7 +177,7 @@ This helps decision-makers understand tradeoffs and build robust production plan
 
 ---
 
-## 📝 Notes
+## Notes
 
 - The planning horizon covers **6 months: July through December**.
 - Initial inventory and backlog are assumed to be zero unless otherwise specified in the dataset.
